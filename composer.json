@@ -1,0 +1,24 @@
+{
+    "name": "mayam/php-chatgpt",
+    "type": "project",
+    "require": {
+        "openai-php/client": "^0.5.3",
+        "guzzlehttp/guzzle": "^7.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mayam\\PhpChatgpt\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mayara-morais",
+            "email": "57415644+mayara-morais@users.noreply.github.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
