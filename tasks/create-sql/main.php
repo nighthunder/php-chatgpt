@@ -1,5 +1,5 @@
 <?php
-// Returns sql code
+// Create sql code
 //This line is necessary to load the PHP client installed by Composer
 require_once('vendor/autoload.php');
 require_once('env.php');
@@ -24,8 +24,7 @@ $result = $client->completions()->create([
     'max_tokens'=>60,
     'top_p'=>1.0,
     'frequency_penalty'=>0.0,
-    'presence_penalty'=>0.0,
-    'stop'=>["\"\"\""]
+    'presence_penalty'=>0.0
 ]);
 
 //After a few seconds the response will be stored in $results
