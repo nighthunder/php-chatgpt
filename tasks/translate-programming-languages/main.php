@@ -1,4 +1,5 @@
 <?php
+// Translate programming languages
 //This line is necessary to load the PHP client installed by Composer
 require_once('vendor/autoload.php');
 require_once('env.php');
@@ -11,25 +12,13 @@ $client = OpenAI::client(MY_OPENAI_KEY);
 
 //The $prompt variable stores our entire prompt
 $prompt = " 
-function invertString($inputString)
-{
-    $length = strlen($inputString);
-    $invertedString = '';
-
-    for ($i = $length - 1; $i >= 0; $i--) {
-        $invertedString .= $inputString[$i];
-    }
-
-    return $invertedString;
-}
-
-// Example usage
-$input = \"Hello, world!\";
-$inverted = invertString($input);
-echo $inverted; // Outputs \"!dlrow ,olleH\";
-
-Here's what the above class is doing, explained in a concise way:
-1.
+    ##### Translate this function  from Python into PHP
+    ### Python
+        
+        def predict_proba(X: Iterable[str]):
+            return np.array([predict_one_probas(tweet) for tweet in X])
+        
+    ### PHP
 ";
 
 //We send our prompt along with parameters to the API
@@ -42,7 +31,7 @@ $result = $client->completions()->create([
     'top_p'=>1.0,
     'frequency_penalty'=>0.0,
     'presence_penalty'=>0.0,
-    'stop'=>["\"\"\""]
+    'stop'=>["###"]
 ]);
 
 //After a few seconds the response will be stored in $results
